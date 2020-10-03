@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook Tutorial</title>
+  </head>
+  <body>
+    <button onclick="sendMessage('Insurgency', 'https://lh3.googleusercontent.com/proxy/ql__ScZI_0Huo-nMJ6IQcPV9daUYQ-4C1dYvCBMY6vAOF0mgTfFovuM77goCUASn5ZP8nnnDfInYEojEZ8L7yuuFFcBG3yJ0CJzR0fmG1qJNZKHeLad3wmYeKQ7FSnJb_Us')">Insurgency</button>
+    <button onclick="sendMessage('Rocket League', 'https://cdn2.unrealengine.com/egs-rocketleague-psyonixllc-ic1-400x400-010135314.png')">Rocket League</button>
+    <button onclick="sendMessage('Splatoon 2', 'https://quovx4d83tr2hp1r22mgwa1m-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/Splatoon-2-400x400.jpg')">Splatoon 2</button>
+  </body>
+
+  <script>
+    function sendMessage(x,img) {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        "username": "La Crew",
+        "embeds": [{
+          "title": "Game Status",
+          "color": "52479",
+          "image": { 
+            "url": img 
+          },
+          "description": "We're currently playing " + x + "!"
+        }]
+      }
+
+      request.send(JSON.stringify(params));
+      alert(x);
+    }
+  </script>
+</html>
