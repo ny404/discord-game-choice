@@ -27,6 +27,8 @@ button:hover { opacity: 0.8; }
 .col-8 { width: 66.66666667%; }
 .col-12 { width: 100%; }
 
+.game { height: 400px; }
+
 @media screen and (max-width: 767px){
 	.col-xs { width: 100%; }
 }
