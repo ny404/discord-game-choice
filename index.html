@@ -8,6 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <div class="row">
+        <input type="text" id="searchGames" onkeyup="searchFilter()" placeholder="Search for games...">
+      </div> 
+    </header>
     <main>
       <div class="row">
         <div class="col-4 col-xs game">
@@ -51,7 +56,7 @@
   <script>
     function sendMessage(x,img) {
       var request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
+      request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
 
       request.setRequestHeader('Content-type', 'application/json');
 
@@ -69,6 +74,24 @@
 
       request.send(JSON.stringify(params));
       alert(x);
+    }
+    function searchFilter() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('searchGames');
+      filter = input.value.toUpperCase();
+      game = document.getElementsByClassName('game');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < game.length; i++) {
+        a = game[i].getElementsByTagName("h3")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          game[i].style.display = "";
+        } else {
+          game[i].style.display = "none";
+        }
+      }
     }
   </script>
 </html>

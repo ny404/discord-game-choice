@@ -1,9 +1,10 @@
-body { font-size: 1em; font-family: 'Roboto', sans-serif; line-height: 1.4em; padding: 0; margin: 0;}
+body { font-size: 1em; font-family: 'Roboto', sans-serif; line-height: 1.4em; padding: 0; margin: 0; background: #192739;}
 h1, h2, h3 { font-family: 'Titillium Web', sans-serif; }
 h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.6em; }
 main { background: #192739; }
+#searchGames { width: 50%; margin: 2% 0 1% 0; padding: 1%;}
 button { 
 	width: 150px;
 	padding: 15px;
