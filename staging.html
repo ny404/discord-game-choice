@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body onload="loadStatus()">
     <header class="headbg">
       <h1 id="pickedGame" class="introduction">Please pick a game to begin!</h1>
       <img id="currentGame" src="images/placeholder.png">
@@ -88,6 +88,14 @@
   </body>
   <script src="https://kit.fontawesome.com/036ea80dc6.js" crossorigin="anonymous"></script>
   <script>
+  	function loadStatus() {
+  		var client = new XMLHttpRequest();
+		client.open('GET', 'status.txt');
+		client.onreadystatechange = function() {
+		  alert(client.responseText);
+		}
+		client.send();
+  	}
     function sendMessage(x,img) {
       var request = new XMLHttpRequest();
       request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
