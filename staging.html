@@ -88,14 +88,14 @@
   </body>
   <script src="https://kit.fontawesome.com/036ea80dc6.js" crossorigin="anonymous"></script>
   <script>
-  	function loadStatus() {
-  		var client = new XMLHttpRequest();
-		client.open('GET', 'status.txt');
-		client.onreadystatechange = function() {
-		  alert(client.responseText);
-		}
-		client.send();
-  	}
+  // 	function loadStatus() {
+  // 		var client = new XMLHttpRequest();
+		// client.open('GET', 'status.txt');
+		// client.onreadystatechange = function() {
+		//   alert(client.responseText);
+		// }
+		// client.send();
+  // 	}
     function sendMessage(x,img) {
       var request = new XMLHttpRequest();
       request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
