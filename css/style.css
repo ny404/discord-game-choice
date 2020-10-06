@@ -1,10 +1,29 @@
 body { font-size: 1em; font-family: 'Roboto', sans-serif; line-height: 1.4em; padding: 0; margin: 0; background: #192739;}
 h1, h2, h3 { font-family: 'Titillium Web', sans-serif; }
-h1 { font-size: 2.5em; }
+h1 { font-size: 2.5em; line-height: 1.2em;}
 h2 { font-size: 2em; }
 h3 { font-size: 1.6em; }
+.headbg { 
+	background: url(../images/header-bg.png) no-repeat center center; 
+	height: 50vh;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+#currentGame { width: 240px; height: 240px; border-radius: 24px; box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;}
+#gameTitle { color: #fff; }
+.introduction { text-align: center; color: #fff; }
 main { background: #192739; }
-#searchGames { width: 50%; padding: 1%;}
+#searchGames { max-width: 1220px; width: 95%; padding: 1%;}
 button { 
 	width: 150px;
 	padding: 15px;
@@ -53,7 +72,9 @@ button:hover { opacity: 0.8; }
 }
 
 @media screen and (max-width: 767px){
-	.row { display: block; padding: 0; }
+	#searchGames { height: 25px; width: 97%; }
+	.introduction { padding: 5%; }
+	.row { display: block; }
 	.game { margin: 0; }
 	.col-xs { width: 100%; }
 }

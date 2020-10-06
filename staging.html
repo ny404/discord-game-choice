@@ -8,14 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <div class="row">
-        <input type="text" id="searchGames" onkeyup="searchFilter()" placeholder="Search for games...">
-      </div> 
+    <header class="headbg">
+      <h1 id="pickedGame" class="introduction">Please pick a game to begin!</h1>
+      <img id="currentGame" src="images/placeholder.png">
+      <p id="gameTitle"></p>
     </header>
     <main>
       <div class="row">
-        <div class="col-3 col-xs game">
+        <h2 class="introduction"><i class="fas fa-gamepad" aria-hidden="true"></i> Game List</h2>
+        <input type="text" id="searchGames" onkeyup="searchFilter()" placeholder="Search for games...">
+      </div>
+      <div class="row">
+        <div class="col-xs game">
+          <img src="images/dota-preview.jpg" class="preview">
+          <div class="description">
+            <h3>Dota 2</h3>
+              <p>Flavour cup siphon as breve strong saucer ristretto coffee. Viennese siphon instant dripper cup robusta a barista breve organic macchiato rich. Roast plunger pot, variety strong mocha caffeine breve galão rich. Viennese pumpkin spice, fair trade barista, mug milk mocha caffeine wings caffeine grinder.</p>
+              <button class="pink" onclick="sendMessage('Dota 2', 'https://tsprocreative.com/images/dota-cover.jpg')">Play This Game</button>
+            </div>
+        </div>
+        <div class="col-xs game">
           <img src="images/insurgency-preview.jpg" class="preview" />
           <div class="description">
             <h3>Insurgency</h3>
@@ -23,7 +35,7 @@
             <button class="grey" onclick="sendMessage('Insurgency', 'https://tsprocreative.com/images/insurgency-cover.jpg')">Play This Game</button>
           </div>
         </div>
-        <div class="col-3 col-xs game">
+        <div class="col-xs game">
           <img src="images/mk8d-preview.jpg" class="preview" />
           <div class="description">
             <h3>Mario Kart 8 Deluxe</h3>
@@ -31,7 +43,15 @@
               <button class="grey" onclick="sendMessage('Mario Kart 8 Deluxe', 'https://tsprocreative.com/images/mk8d-cover.jpg')">Play This Game</button>
             </div>
         </div>
-        <div class="col-3 col-xs game">
+        <div class="col-xs game">
+          <img src="images/overcooked-2-preview.jpg" class="preview">
+          <div class="description">
+            <h3>Overcooked 2</h3>
+              <p>Flavour cup siphon as breve strong saucer ristretto coffee. Viennese siphon instant dripper cup robusta a barista breve organic macchiato rich. Roast plunger pot, variety strong mocha caffeine breve galão rich. Viennese pumpkin spice, fair trade barista, mug milk mocha caffeine wings caffeine grinder.</p>
+              <button class="blue" onclick="sendMessage('Overcooked 2', 'https://tsprocreative.com/images/overcooked-2-cover.jpg')">Play This Game</button>
+            </div>
+        </div>
+        <div class="col-xs game">
           <img src="images/rocket-league-preview.jpg" class="preview">
           <div class="description">
             <h3>Rocket League</h3>
@@ -39,7 +59,7 @@
               <button class="blue" onclick="sendMessage('Rocket League', 'https://tsprocreative.com/images/rocket-league-cover.png')">Play This Game</button>
             </div>
         </div>
-        <div class="col-3 col-xs game">
+        <div class="col-xs game">
           <img src="images/splatoon-2-preview.jpg" class="preview">
           <div class="description">
             <h3>Splatoon 2</h3>
@@ -47,26 +67,26 @@
               <button class="pink" onclick="sendMessage('Splatoon 2', 'https://tsprocreative.com/images/splatoon-2-cover.jpg')">Play This Game</button>
             </div>
         </div>
-        <div class="col-3 col-xs game">
-          <img src="images/splatoon-2-preview.jpg" class="preview">
+        <div class="col-xs game">
+          <img src="images/streets-of-rogue-preview.jpg" class="preview">
           <div class="description">
-            <h3>Splatoon 2</h3>
+            <h3>Streets of Rogue</h3>
               <p>Flavour cup siphon as breve strong saucer ristretto coffee. Viennese siphon instant dripper cup robusta a barista breve organic macchiato rich. Roast plunger pot, variety strong mocha caffeine breve galão rich. Viennese pumpkin spice, fair trade barista, mug milk mocha caffeine wings caffeine grinder.</p>
-              <button class="pink" onclick="sendMessage('Splatoon 2', 'https://tsprocreative.com/images/splatoon-2-cover.jpg')">Play This Game</button>
+              <button class="pink" onclick="sendMessage('Streets of Rogue', 'https://tsprocreative.com/images/streets-of-rogue-cover.jpg')">Play This Game</button>
             </div>
         </div>
-        <div class="col-3 col-xs game">
-          <img src="images/splatoon-2-preview.jpg" class="preview">
+        <div class="col-xs game">
+          <img src="images/ultimate-chicken-horse-preview.jpg" class="preview">
           <div class="description">
-            <h3>Splatoon 2</h3>
+            <h3>Ultimate Chicken Horse</h3>
               <p>Flavour cup siphon as breve strong saucer ristretto coffee. Viennese siphon instant dripper cup robusta a barista breve organic macchiato rich. Roast plunger pot, variety strong mocha caffeine breve galão rich. Viennese pumpkin spice, fair trade barista, mug milk mocha caffeine wings caffeine grinder.</p>
-              <button class="pink" onclick="sendMessage('Splatoon 2', 'https://tsprocreative.com/images/splatoon-2-cover.jpg')">Play This Game</button>
+              <button class="pink" onclick="sendMessage('Ultimate Chicken Horse', 'https://tsprocreative.com/images/ultimate-chicken-horse-cover.jpg')">Play This Game</button>
             </div>
         </div>
       </div>
     </main>
   </body>
-
+  <script src="https://kit.fontawesome.com/036ea80dc6.js" crossorigin="anonymous"></script>
   <script>
     function sendMessage(x,img) {
       var request = new XMLHttpRequest();
@@ -88,6 +108,9 @@
 
       request.send(JSON.stringify(params));
       alert(x);
+      document.getElementById("currentGame").src=img;
+      document.getElementById("pickedGame").innerHTML = "We're currently playing:";
+      document.getElementById("gameTitle").innerHTML = x;
     }
     function searchFilter() {
       // Declare variables
