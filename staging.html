@@ -87,15 +87,34 @@
     </main>
   </body>
   <script src="https://kit.fontawesome.com/036ea80dc6.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type='text/javascript'>    
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQb6yYbtPo8TgL-NwlqSv6w9wBfIFQytdwGWeXSvNTXKewKVIzlix2Slg081kHVduPFE-sD8Y5eIqqf/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+    alert('Successfully processed!')
+    console.log(data);
+  }
+
+  window.addEventListener('DOMContentLoaded', init)
+</script>
   <script>
-  // 	function loadStatus() {
+  	function loadStatus() {
   // 		var client = new XMLHttpRequest();
 		// client.open('GET', 'status.txt');
 		// client.onreadystatechange = function() {
 		//   alert(client.responseText);
 		// }
 		// client.send();
-  // 	}
+  	}
+	  
     function sendMessage(x,img) {
       var request = new XMLHttpRequest();
       request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
