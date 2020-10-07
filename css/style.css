@@ -65,6 +65,7 @@ button:hover { opacity: 0.8; }
 .game { width: 31%; margin: 1%; color: #fff; }
 .game h3 { margin-top: 0; color: #79beda;}
 .preview { width: 100%; display: block; }
+.tags { background: #192739; display: inline-block; padding: 2%; margin-right: 5px; font-size: 0.8em; }
 .description {
 	padding: 5%;
 	background: #293341;
