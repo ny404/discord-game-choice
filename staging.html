@@ -14,7 +14,7 @@
       <p id="gameTitle"></p>
       <div class="results"></div>
     </header>
-    <main>
+    <main id="test-form">
       <div class="row">
         <h2 class="introduction"><i class="fas fa-gamepad" aria-hidden="true"></i> Game List</h2>
         <input type="text" id="searchGames" onkeyup="searchFilter()" placeholder="Search for games...">
@@ -81,7 +81,7 @@
           <div class="description">
             <h3>Ultimate Chicken Horse</h3>
               <p>Flavour cup siphon as breve strong saucer ristretto coffee. Viennese siphon instant dripper cup robusta a barista breve organic macchiato rich. Roast plunger pot, variety strong mocha caffeine breve galão rich. Viennese pumpkin spice, fair trade barista, mug milk mocha caffeine wings caffeine grinder.</p>
-              <button class="pink" onclick="sendMessage('Ultimate Chicken Horse', 'https://tsprocreative.com/images/ultimate-chicken-horse-cover.jpg')">Play This Game</button>
+              <button class="pink" name="gameName" id="" onclick="sendMessage('Ultimate Chicken Horse', 'https://tsprocreative.com/images/ultimate-chicken-horse-cover.jpg')">Play This Game</button>
             </div>
         </div>
       </div>
@@ -106,7 +106,7 @@
 	    $(entry).each(function () {
 	      // Column names are name, age, etc.
 	      $('.results').prepend(
-	        '<h2>' + this.gsx$name.$t + '</h2><p>' + this.gsx$cover.$t + '</p>'
+	        '<h2>' + this.gsx$gamename.$t + '</h2><p>' + this.gsx$gamecover.$t + '</p>'
 	      );
 	    });
 	  });
@@ -114,7 +114,6 @@
     function sendMessage(x,img) {
       var request = new XMLHttpRequest();
       request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
-
       request.setRequestHeader('Content-type', 'application/json');
 
       var params = {
@@ -134,17 +133,20 @@
       document.getElementById("currentGame").src=img;
       document.getElementById("pickedGame").innerHTML = "We're currently playing:";
       document.getElementById("gameTitle").innerHTML = x;
-      var request2 = $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbx4BdjHxhMz26U4jKmmUaXtvOTdkUwy3rtKDNuD3irFedamtREa/ex",
-            type: "put",
-            data: [{
-            	range: "Sheet1!A2:B2",
-            	majorDimensions: "ROWS",
-            	values: [
-            		[x,img]
-            	]
-            }]
-        });
+      var $form = $('#test-form'),
+	    url = 'https://script.google.com/macros/s/AKfycbx4BdjHxhMz26U4jKmmUaXtvOTdkUwy3rtKDNuD3irFedamtREa/exec'
+
+	$('.pink').on('click', function(e) {
+	  e.preventDefault();
+	  var jqxhr = $.ajax({
+	    url: url,
+	    method: "GET",
+	    dataType: "json",
+	    data: $form.serializeObject()
+	  }).success(
+	    // do something
+	  );
+	})
    //    	// ID of the Google Spreadsheet
 	  // var spreadsheetID = '1poYa0UrCWgFU4I39rJ1jg3twIAthc02SmvisUzgftN4';
 
