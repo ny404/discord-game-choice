@@ -133,16 +133,18 @@
       document.getElementById("currentGame").src=img;
       document.getElementById("pickedGame").innerHTML = "We're currently playing:";
       document.getElementById("gameTitle").innerHTML = x;
-      var $form = $('#test-form'),
-	    url = 'https://script.google.com/macros/s/AKfycbx4BdjHxhMz26U4jKmmUaXtvOTdkUwy3rtKDNuD3irFedamtREa/exec'
+      var sheetUrl = 'https://script.google.com/macros/s/AKfycbx4BdjHxhMz26U4jKmmUaXtvOTdkUwy3rtKDNuD3irFedamtREa/exec'
 
 	$('.pink').on('click', function(e) {
 	  e.preventDefault();
 	  var jqxhr = $.ajax({
-	    url: url,
-	    method: "GET",
+	    url: sheetUrl,
+	    method: "POST",
 	    dataType: "json",
-	    data: $form.serializeObject()
+	    data: { 
+        "gsx$gamename.$t" : x,
+        "gsx$gamecover.$t" : img
+      }
 	  }).success(
 	    // do something
 	  );
