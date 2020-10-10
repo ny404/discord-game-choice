@@ -23,6 +23,9 @@ header {
 #gameTitle { color: #fff; }
 .introduction { text-align: center; color: #fff; }
 main { background: #192739; }
+.row.justify { justify-content: left; }
+.sidebar { width: 20%; }
+.content { width: 80%; }
 #searchGames { max-width: 1220px; width: 95%; padding: 1%;}
 button { 
 	width: 150px;
