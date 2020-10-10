@@ -21,7 +21,7 @@ function loadStatus() {
 }
 
 function sendMessage(x,img) {
-  var request = new XMLHttpRequest();
+  /*var request = new XMLHttpRequest();
   request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
   //request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
   request.setRequestHeader('Content-type', 'application/json');
@@ -38,13 +38,17 @@ function sendMessage(x,img) {
     }]
   }
 
-  request.send(JSON.stringify(params));
+  request.send(JSON.stringify(params));*/
   document.getElementById("currentGame").src=img;
   document.getElementById("pickedGame").innerHTML = "We're currently playing:";
   document.getElementById("gameTitle").innerHTML = x;
   document.getElementById("selectedCover").value=img;
   document.getElementById("selectedGame").value = x;
   pushGoogle(x,img);
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
 function pushGoogle (x,img) {
