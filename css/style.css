@@ -19,9 +19,30 @@ header {
   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
+  animation: bob 1s infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 #gameTitle { color: #fff; }
 .introduction { text-align: center; color: #fff; }
+
+@keyframes bob {
+  0% {
+    transform: translate(0, -5px);
+	-webkit-transform: translate(0, -5px);
+	-moz-transform: translate(0, -5px);
+	-ms-transform: translate(0, -5px);
+	-o-transform: translate(0, -5px);
+  }
+  100% {
+    transform: translate(0, 5px);
+	-webkit-transform: translate(0, 5px);
+	-moz-transform: translate(0, 5px);
+	-ms-transform: translate(0, 5px);
+	-o-transform: translate(0, 5px);
+  }
+}
+
 main { background: #192739; }
 .sidebar { width: 20%; }
 .content {
@@ -71,7 +92,17 @@ button:hover { opacity: 0.8; }
 .col-8 { width: 66.66666667%; }
 .col-12 { width: 100%; }
 
-.game { width: 31%; margin: 1%; color: #fff; }
+.game { width: 31%; margin: 1%; color: #fff; transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;; }
+.game:hover { 
+	transform: scale(1.0125);
+	box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+		0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+}
 .game h3 { margin-top: 0; color: #79beda;}
 .preview { width: 100%; display: block; }
 .tags { background: #192739; display: inline-block; padding: 2%; margin-right: 5px; font-size: 0.8em; }
@@ -85,5 +116,6 @@ button:hover { opacity: 0.8; }
 	.introduction { padding: 5%; }
 	.row { display: block; }
 	.game { margin: 0; }
+	.game:hover { transform: none; box-shadow: none; }
 	.col-xs { width: 100%; }
 }
