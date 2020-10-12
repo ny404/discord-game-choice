@@ -92,7 +92,7 @@ button:hover { opacity: 0.8; }
 .col-8 { width: 66.66666667%; }
 .col-12 { width: 100%; }
 
-.game { width: 31%; margin: 1%; color: #fff; transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;; }
+.game { width: 31%; margin: 1%; color: #fff; transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out; }
 .game:hover { 
 	transform: scale(1.0125);
 	box-shadow:
@@ -110,6 +110,28 @@ button:hover { opacity: 0.8; }
 	padding: 5%;
 	background: #293341;
 }
+ul { list-style: none; padding: 0; }
+li.release:before {
+	font-family: "Font Awesome 5 Pro";
+	position: relative;
+	content: '\f135';
+	margin-right: 10px;
+}
+li.developer:before {
+	font-family: "Font Awesome 5 Pro";
+	position: relative;
+	right: 1.5px;
+	content: '\f121';
+	margin-right: 6.5px;
+}
+li.publisher:before {
+	font-family: "Font Awesome 5 Pro";
+	position: relative;
+	left: 2px;
+	content: '\f1ad';
+	margin-right: 12px;
+}
+i.fas { margin-right: 10px; }
 
 @media screen and (max-width: 767px){
 	#searchGames { height: 25px; width: 97%; }
