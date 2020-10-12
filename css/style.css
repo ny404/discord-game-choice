@@ -112,20 +112,20 @@ button:hover { opacity: 0.8; }
 }
 ul { list-style: none; padding: 0; }
 li.release:before {
-	font-family: "Font Awesome 5 Pro";
+	font-family: "FontAwesome";
 	position: relative;
 	content: '\f135';
 	margin-right: 10px;
 }
 li.developer:before {
-	font-family: "Font Awesome 5 Pro";
+	font-family: "FontAwesome";
 	position: relative;
 	right: 1.5px;
 	content: '\f121';
 	margin-right: 6.5px;
 }
 li.publisher:before {
-	font-family: "Font Awesome 5 Pro";
+	font-family: "FontAwesome";
 	position: relative;
 	left: 2px;
 	content: '\f1ad';
