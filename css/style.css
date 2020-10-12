@@ -5,7 +5,7 @@ h2 { font-size: 2em; }
 h3 { font-size: 1.6em; }
 #test-form { display: inherit; }
 header { 
-	background: url(../images/header-bg.png) no-repeat center center; 
+	background: url(../images/header-bg2.jpg) no-repeat center center; 
 	background-size: cover;
 	display: flex;
 	justify-content: center;
