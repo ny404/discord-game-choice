@@ -133,6 +133,9 @@ li.publisher:before {
 }
 i.fas { margin-right: 10px; }
 
+i.fa-windows, i.fa-apple, i.fa-linux, i.fa-playstation, i.fa-xbox, i.switch { margin: 0 5px; }
+i.switch { background: url(../images/nintendo-switch.png); width: 14px; height: 14px; }
+
 @media screen and (max-width: 767px){
 	#searchGames { height: 25px; width: 97%; }
 	.introduction { padding: 5%; }
