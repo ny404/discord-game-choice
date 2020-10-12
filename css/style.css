@@ -69,20 +69,10 @@ button {
 }
 button:hover { opacity: 0.8; }
 button.darkmode-toggle {
-	background: #100f2c;
-	width: 3rem;
-	height: 3rem;
-	position: fixed;
-	border-radius: 50%;
-	border: none;
-	right: unset;
-	bottom: 64px;
-	left: 32px;
-	cursor: pointer;
-	transition: all 0.5s ease;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin: 0;
+	padding: 0;
+	opacity: none;
+
 }
 button.darkmode-toggle:hover {
 	opacity: none;
