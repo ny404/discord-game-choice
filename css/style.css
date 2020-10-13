@@ -68,14 +68,9 @@ button {
     display: block;
 }
 button:hover { opacity: 0.8; }
-button.darkmode-toggle {
-	margin: 0;
-	padding: 0;
-	opacity: none;
-
-}
-button.darkmode-toggle:hover {
-	opacity: none;
+.darkmode-toggle {
+	margin: 0 !important;
+	padding: 0 !important;
 }
 .blue { background: #42bff5; }
 .pink { background: #f5115d; color: #fff; }
