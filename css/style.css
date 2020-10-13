@@ -70,8 +70,9 @@ button {
 button:hover { opacity: 0.8; }
 .darkmode-toggle {
 	margin: 0 !important;
-	padding: 0 !important;
+	padding: 0 !important
 }
+.darkmode-toggle:hover { opacity: 1; }
 .blue { background: #42bff5; }
 .pink { background: #f5115d; color: #fff; }
 .grey { background: #666; color: #fff; }
