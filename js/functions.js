@@ -1,3 +1,5 @@
+var timer = 0;
+
 function loadStatus() {
     // ID of the Google Spreadsheet
   var spreadsheetID = '1poYa0UrCWgFU4I39rJ1jg3twIAthc02SmvisUzgftN4';
