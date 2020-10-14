@@ -70,6 +70,9 @@ function sendMessage(x,img) {
     count = 30;
     counter = setInterval(timer, 1000);
   }
+  if (count >= 0) {
+    alert("Please try again after " + count + " seconds!");
+  }
 }
 
 function pushGoogle (x,img) {
