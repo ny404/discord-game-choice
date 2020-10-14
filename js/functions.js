@@ -1,4 +1,19 @@
-var timer = 0;
+var count=5;
+
+var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+     return;
+  }
+  console.log(count);
+  //Do code for showing the number of seconds here
+}
 
 function loadStatus() {
     // ID of the Google Spreadsheet
@@ -23,40 +38,43 @@ function loadStatus() {
 }
 
 function sendMessage(x,img) {
-  var request = new XMLHttpRequest();
-  request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
-  //request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
-  request.setRequestHeader('Content-type', 'application/json');
+  if (count <= 0) {
+    var request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
+    //request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
+    request.setRequestHeader('Content-type', 'application/json');
 
-  var params = {
-    "username": "La Crew",
-    "embeds": [{
-      "title": "Game Status",
-      "color": "52479",
-      "image": { 
-        "url": img 
-      },
-      "description": "We're currently playing " + x + "!"
-    }]
+    var params = {
+      "username": "La Crew",
+      "embeds": [{
+        "title": "Game Status",
+        "color": "52479",
+        "image": { 
+          "url": img 
+        },
+        "description": "We're currently playing " + x + "!"
+      }]
+    }
+
+    request.send(JSON.stringify(params));
+    document.getElementById("currentGame").src=img;
+    document.getElementById("pickedGame").innerHTML = "We're currently playing:";
+    document.getElementById("gameTitle").innerHTML = x;
+    document.getElementById("selectedCover").value=img;
+    document.getElementById("selectedGame").value = x;
+    pushGoogle(x,img);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    count = 30;
+    counter = setInterval(timer, 1000);
   }
-
-  request.send(JSON.stringify(params));
-  document.getElementById("currentGame").src=img;
-  document.getElementById("pickedGame").innerHTML = "We're currently playing:";
-  document.getElementById("gameTitle").innerHTML = x;
-  document.getElementById("selectedCover").value=img;
-  document.getElementById("selectedGame").value = x;
-  pushGoogle(x,img);
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
 }
 
 function pushGoogle (x,img) {
   var $form = $('#set-status'),
   url = 'https://script.google.com/macros/s/AKfycbx4BdjHxhMz26U4jKmmUaXtvOTdkUwy3rtKDNuD3irFedamtREa/exec'
-
 
   $('#set-status').on('submit', function(e) {
     e.preventDefault();
