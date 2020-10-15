@@ -15,6 +15,13 @@ function timer()
   //Do code for showing the number of seconds here
 }
 
+function disableButton() {
+  y = document.getElementsByClassName("myBtn");
+  for (i = 0; i < y.length; i++) {
+    y[i].disabled = true;
+  }
+}
+
 function loadStatus() {
     // ID of the Google Spreadsheet
   var spreadsheetID = '1poYa0UrCWgFU4I39rJ1jg3twIAthc02SmvisUzgftN4';
