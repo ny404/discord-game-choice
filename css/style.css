@@ -148,7 +148,7 @@ li.website:before {
 }
 i.fas { margin: 0 5px; }
 
-i.fa-windows, i.fa-desktop, i.fa-apple, i.fa-linux, i.fa-playstation, i.fa-xbox, i.switch { margin: 0 5px; }
+i.fa-windows, i.fa-desktop, i.fa-apple, i.fa-android, i.fa-linux, i.fa-playstation, i.fa-xbox, i.switch { margin: 0 5px; }
 i.switch { background: url(../images/nintendo-switch.png); width: 14px; height: 14px; }
 
 @media screen and (max-width: 767px){
