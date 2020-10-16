@@ -3,6 +3,8 @@ h1, h2, h3 { font-family: 'Titillium Web', sans-serif; }
 h1 { font-size: 2.5em; line-height: 1.2em;}
 h2 { font-size: 2em; }
 h3 { font-size: 1.6em; }
+a { text-decoration: none; color: #fff; border-bottom: 1px solid;}
+a:hover, a:active, a:focus { color: #F1D302; }
 #test-form { display: inherit; }
 header { 
 	background: url(../images/header-bg2.jpg) no-repeat center center; 
@@ -74,7 +76,7 @@ button:hover { opacity: 0.8; }
 }
 .darkmode-toggle:hover { opacity: 1; }
 .blue { background: #42bff5; }
-.pink { background: #f5115d; color: #fff; }
+.pink { background: #ff3562; color: #fff; }
 .grey { background: #666; color: #fff; }
 
 .row { 
@@ -116,6 +118,7 @@ button:hover { opacity: 0.8; }
 	background: #293341;
 }
 ul { list-style: none; padding: 0; }
+li { line-height: 1.6em; }
 li.release:before {
 	font-family: "FontAwesome";
 	position: relative;
@@ -136,7 +139,14 @@ li.publisher:before {
 	content: '\f1ad';
 	margin-right: 12px;
 }
-i.fas { margin-right: 10px; }
+li.website:before {
+	font-family: "FontAwesome";
+	position: relative;
+	left: 1.5px;
+	content: '\f0c1';
+	margin-right: 10.5px;
+}
+i.fas { margin: 0 5px; }
 
 i.fa-windows, i.fa-desktop, i.fa-apple, i.fa-linux, i.fa-playstation, i.fa-xbox, i.switch { margin: 0 5px; }
 i.switch { background: url(../images/nintendo-switch.png); width: 14px; height: 14px; }
