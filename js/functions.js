@@ -51,7 +51,7 @@ function loadStatus() {
 
     $(entry).each(function () {
       document.getElementById("currentGame").src=this.gsx$gamecover.$t;
-      document.getElementById("pickedGame").innerHTML = "We're currently playing:";
+      document.getElementById("pickedGame").innerHTML = "We're currently streaming:";
       document.getElementById("gameTitle").innerHTML = this.gsx$gamename.$t;
 
     });
@@ -62,9 +62,6 @@ function sendMessage(x,img) {
   if (count <= 0) {
     var request = new XMLHttpRequest();
     request.open("POST", "https://media.guilded.gg/webhooks/6e2cd955-6c79-45e4-83bc-c27a855a2bb2/BqcPX55ocKqGqqiyUaaE0sCCuWY8ayw8au6IgWcq8AwMeesEeWWiqMCeScC4aYUOuGE0WE6mOwEWcaowccOuEs");
-    //request.open("POST", "https://media.guilded.gg/webhooks/b54e68d8-a8a8-45c0-96a2-0b6ffdb572e7/1EHGYcPUcwwaGUCOO682KqmcyAy66a2g08Sk04sOImy6uI20cSMc8Gek24MU4E0w0u22ySCA84CKyuyMKiUmsw");
-    //request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
-    //request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
     request.setRequestHeader('Content-type', 'application/json');
 
     var params = {
@@ -75,13 +72,13 @@ function sendMessage(x,img) {
         "image": { 
           "url": img 
         },
-        "description": "We're currently playing " + x + "!"
+        "description": "We're currently streaming " + x + "!"
       }]
     }
 
     request.send(JSON.stringify(params));
     document.getElementById("currentGame").src=img;
-    document.getElementById("pickedGame").innerHTML = "We're currently playing:";
+    document.getElementById("pickedGame").innerHTML = "We're currently streaming:";
     document.getElementById("gameTitle").innerHTML = x;
     document.getElementById("selectedCover").value=img;
     document.getElementById("selectedGame").value = x;
