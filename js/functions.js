@@ -61,7 +61,9 @@ function loadStatus() {
 function sendMessage(x,img) {
   if (count <= 0) {
     var request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
+    request.open("POST", "https://media.guilded.gg/webhooks/6e2cd955-6c79-45e4-83bc-c27a855a2bb2/BqcPX55ocKqGqqiyUaaE0sCCuWY8ayw8au6IgWcq8AwMeesEeWWiqMCeScC4aYUOuGE0WE6mOwEWcaowccOuEs");
+    //request.open("POST", "https://media.guilded.gg/webhooks/b54e68d8-a8a8-45c0-96a2-0b6ffdb572e7/1EHGYcPUcwwaGUCOO682KqmcyAy66a2g08Sk04sOImy6uI20cSMc8Gek24MU4E0w0u22ySCA84CKyuyMKiUmsw");
+    //request.open("POST", "https://discord.com/api/webhooks/762084461092798494/3h6pWBiM9JW94CKIMBreK9dHpEO7AZyE9XCLDVg12xcZG1EGz19uSUw9BCqLuea9Mb6H");
     //request.open("POST", "https://discord.com/api/webhooks/761769489011572757/j15L3vep7P6xhWs6DYxLslDHtLg86sJg6Vqb3MZY1KDxFdBU3H1mncn994zdAzZj4XZE");
     request.setRequestHeader('Content-type', 'application/json');
 
