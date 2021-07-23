@@ -1,4 +1,5 @@
 var count=5;
+var stream;
 
 var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 
@@ -53,15 +54,19 @@ function loadStatus() {
       document.getElementById("currentGame").src=this.gsx$gamecover.$t;
       document.getElementById("pickedGame").innerHTML = "We're currently streaming:";
       document.getElementById("gameTitle").innerHTML = this.gsx$gamename.$t;
-
     });
   });
 }
 
+function setURL() {
+	stream = document.getElementById('streamURL').value;
+}
+
 function sendMessage(x,img) {
   if (count <= 0) {
+  	setURL();
     var request = new XMLHttpRequest();
-    request.open("POST", "https://media.guilded.gg/webhooks/6e2cd955-6c79-45e4-83bc-c27a855a2bb2/BqcPX55ocKqGqqiyUaaE0sCCuWY8ayw8au6IgWcq8AwMeesEeWWiqMCeScC4aYUOuGE0WE6mOwEWcaowccOuEs");
+    request.open("POST", "https://hook.integromat.com/qc03sx8svyeml5ah5gn87ndmgj8a9lx0");
     request.setRequestHeader('Content-type', 'application/json');
 
     var params = {
@@ -72,7 +77,8 @@ function sendMessage(x,img) {
         "image": { 
           "url": img 
         },
-        "description": "We're currently streaming " + x + "!"
+        "description": "We're currently streaming " + x + "!",
+        "url": stream
       }]
     }
 
