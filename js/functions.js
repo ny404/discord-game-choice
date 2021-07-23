@@ -70,9 +70,8 @@ function sendMessage(x,img) {
     request.setRequestHeader('Content-type', 'application/json');
 
     var params = {
-      "username": "La Crew",
       "embeds": [{
-        "title": "Game Status",
+        "title": "Team Sanctuary is live!",
         "color": "52479",
         "image": { 
           "url": img 
